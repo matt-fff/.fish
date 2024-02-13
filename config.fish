@@ -28,7 +28,7 @@ if status is-interactive
     # Hook for desk activation
     [ -n "$DESK_ENV" ] && source "$DESK_ENV" || true
     
-    set -q TMUX && set tsession $(tmux display-message -p "#S")
+    set -q TMUX && set tsession (tmux display-message -p "#S")
     
     
     # strip suffixes so that you can make
