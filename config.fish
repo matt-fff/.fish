@@ -84,7 +84,8 @@ if status is-interactive
    
 
     if type -q direnv
-      eval "direnv hook fish"
+      set -l direnv_hook (direnv hook fish)
+      eval $direnv_hook
     end
     
     # For clipmenu
@@ -101,3 +102,10 @@ end
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
+
+# pnpm
+set -gx PNPM_HOME "/home/mattwhite/.local/share/pnpm"
+if not string match -q -- $PNPM_HOME $PATH
+  set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end
