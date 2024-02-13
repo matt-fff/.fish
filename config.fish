@@ -34,7 +34,7 @@ if status is-interactive
     # strip suffixes so that you can make
     # multiple instances of the same desk
     # by using deskname-1, deskname-2, etc
-    set desk $(echo "$tsession" | sed -E "s/-[0-9]+\$//g")
+    set desk (echo "$tsession" | sed -E "s/-[0-9]+\$//g")
     
     if [ "x$tsession" != "x" ] && [ "$tsession" != "$WITHIN_DESK" ]
     	export WITHIN_DESK="$tsession"
