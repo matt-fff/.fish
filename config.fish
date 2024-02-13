@@ -81,6 +81,11 @@ if status is-interactive
     fish_add_path ~/.rye/shims
     fish_add_path /opt/google-cloud-cli/bin
     fish_add_path /home/matt/.pulumi/bin
+   
+
+    if type -q direnv
+      eval "$(direnv hook fish)"
+    end
     
     # For clipmenu
     export CM_LAUNCHER=rofi
