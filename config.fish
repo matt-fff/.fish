@@ -96,6 +96,9 @@ if status is-interactive
         nvm use > /dev/null
     end
 
+    # vscode
+    string match -q "$TERM_PROGRAM" "vscode" and . (code --locate-shell-integration-path fish)
+
     [ -n "$DESK_ENV" ] && source "$DESK_ENV" || true
 end
 
