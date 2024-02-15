@@ -98,7 +98,9 @@ if status is-interactive
     end
 
     # vscode
-    string match -q "$TERM_PROGRAM" "vscode" and . (code --locate-shell-integration-path fish)
+    if type -q code
+      string match -q "$TERM_PROGRAM" "vscode" and . (code --locate-shell-integration-path fish)
+    end
 
     [ -n "$DESK_ENV" ] && source "$DESK_ENV" || true
 end
