@@ -81,6 +81,7 @@ if status is-interactive
     fish_add_path ~/.rye/shims
     fish_add_path /opt/google-cloud-cli/bin
     fish_add_path /home/matt/.pulumi/bin
+    fish_add_path /var/lib/flatpak/exports/bin
    
 
     if type -q direnv
