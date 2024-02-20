@@ -102,16 +102,20 @@ if status is-interactive
       string match -q "$TERM_PROGRAM" "vscode" and . (code --locate-shell-integration-path fish)
     end
 
+    # pnpm
+    if type -q pnpm
+      set -gx PNPM_HOME ~/.local/share/pnpm
+      if not string match -q -- $PNPM_HOME $PATH
+        set -gx PATH "$PNPM_HOME" $PATH
+      end
+    end
+    # pnpm end
+
     [ -n "$DESK_ENV" ] && source "$DESK_ENV" || true
+
 end
 
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
 
-# pnpm
-set -gx PNPM_HOME "/home/mattwhite/.local/share/pnpm"
-if not string match -q -- $PNPM_HOME $PATH
-  set -gx PATH "$PNPM_HOME" $PATH
-end
-# pnpm end
