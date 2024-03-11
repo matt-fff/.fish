@@ -4,7 +4,7 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 
     function fish_greeting
-        #echo Hey $USER - don\'t (set_color green)fuck(set_color normal) shit up\ (set_color yellow)
+        #echo Hey $USER - don\'t (set_color green)break(set_color normal) anything\ (set_color yellow)
     end
 
     export VISUAL=nvim
@@ -113,8 +113,4 @@ if status is-interactive
     [ -n "$DESK_ENV" ] && source "$DESK_ENV" || true
 
 end
-
-# bun
-set --export BUN_INSTALL "$HOME/.bun"
-set --export PATH $BUN_INSTALL/bin $PATH
 
