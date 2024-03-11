@@ -85,8 +85,7 @@ if status is-interactive
    
 
     if type -q direnv
-      set -l direnv_hook (direnv hook fish)
-      eval $direnv_hook
+      direnv hook fish | source
     end
     
     # For clipmenu
