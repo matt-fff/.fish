@@ -10,6 +10,7 @@ if status is-interactive
 
     export VISUAL=nvim
     export EDITOR=nvim
+    export FLYCTL_INSTALL="/home/matt/.fly"
 
     
     ### Kitty Start #########################
@@ -83,6 +84,7 @@ if status is-interactive
     fish_add_path /opt/google-cloud-cli/bin
     fish_add_path /home/matt/.pulumi/bin
     fish_add_path /var/lib/flatpak/exports/bin
+    fish_add_path "$FLYCTL_INSTALL/bin"
    
 
     if type -q direnv
@@ -98,9 +100,9 @@ if status is-interactive
     end
 
     # vscode
-    if type -q code
-      string match -q "$TERM_PROGRAM" "vscode" and . (code --locate-shell-integration-path fish)
-    end
+    # if type -q code
+    #   string match -q "$TERM_PROGRAM" "vscode" and . (code --locate-shell-integration-path fish)
+    # end
 
     # pnpm
     if type -q pnpm
