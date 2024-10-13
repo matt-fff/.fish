@@ -85,6 +85,7 @@ if status is-interactive
     fish_add_path /home/matt/.pulumi/bin
     fish_add_path /var/lib/flatpak/exports/bin
     fish_add_path "$FLYCTL_INSTALL/bin"
+    fish_add_path ~/go/bin
    
 
     if type -q direnv
